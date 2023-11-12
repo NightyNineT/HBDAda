@@ -12,12 +12,39 @@
     }
 
     body {
-      background: linear-gradient(to right, #920853, #985a9e);
-      height: 90vh;
+      margin: 0;
+      padding: 0;
+      background-image: url('images/bg.jpg');
+      /* Replace 'your-background-image.jpg' with the actual path to your image */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      /* Make sure the body takes the full viewport height */
       display: flex;
       align-items: center;
       justify-content: center;
+      position: relative;
+      /* background: linear-gradient(to right, #920853, #985a9e);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center; */
       overflow: hidden;
+    }
+
+    /* Add a semi-transparent gradient overlay */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(to bottom, rgba(148, 4, 83, 0.5), rgba(196, 14, 114, 0.3));
+      /* Adjust the gradient and opacity as needed */
+      z-index: -1;
+      /* Place the overlay behind the content */
     }
 
     .slider {
@@ -91,7 +118,7 @@
 
 <body>
 
-  <div id="outsideHoursMessage">
+  <div class="heading" id="outsideHoursMessage">
     记得过了 0 点再回来看哦！</div>
 
 
